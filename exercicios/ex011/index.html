@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <title>Mídias em HTML5</title>
+    </head>
+<body>
+    <h1>Imagens dinamicas</h1>
+   
+
+    <p>Dicas importantes:</p>
+    <ol>
+        <li>A tag IMG puxa a imagem que você quer mostrar no seu site e ela deve ser coloca na parte mais inferior do código dentro do PICTURE</li>
+        <li>Utilizando a tag SOURCE:MEDIA:TYPE é possível carregar uma imagem e especificar em qual largura de tela ela deve ser carregada</li>
+        <li>Colocar max-width no lugar de min-width, assim é possível selecionar uma imagem que se encaixe corretamente na largura da tela </li>
+        <li>Para funcionar corretamente deve-se colocar em primeiro lugar a imagem de menor tamanho até a de maior tamanho</li>
+    </ol>
+    <p>Exemplo a seguir:</p>
+    <p>Tente abrir em vários dispositivos diferentes ou simplesmente aumente e diminua seu navegador.</p>
+    <picture>
+        <source media="(max-width: 750px)" srcset="imagens/foto-p.png" type="image/png">
+        <source media="(max-width: 1050px)" srcset="imagens/foto-m.png" type="image/png">
+        <img src="imagens/foto-g.png" alt="Imagem flexível">
+    </picture>
+
+    <h1>Reproduzindo Áudio</h1>
+    <p>Vamos aprender a reproduzir áudios em HTML5</p>
+    <ol>
+        
+        <li>
+            <p>Maneira mais simples e limitada:</p>
+        
+            <audio src="midia/straight-fuse-french-fuse.mp3" controls></audio>
+            <!--MP3 WAV OGG-->
+        </li>
+        <li>
+            <p>Maneira mais completa:</p>
+            <audio preload="metadata" controls autoplay> 
+                <!--Parâmetro preload="auto" é o padrão e somente considera o site totalmente carregado quando carrega todo o áudio EVITAR USAR ESTE PARÂMETRO!
+                O parâmetro preload="metada" carrega somente o nome e tamanho do arquivo, este é o parâmtro ideal para se utilizar.-->
+                <source src="midia/straight-fuse-french-fuse.mp3" type="audio/mpeg">
+                <source src="midia/straight-fuse-french-fuse.ogg" type="audio/ogg">
+                <source src="midia/straight-fuse-french-fuse.wav" type="audio/wav">
+                
+                <p>Infelizmente seu navegador não consegue reproduzir este áudio. <a href="midia/straight-fuse-french-fuse.mp3">Clique aqui</a> para baixar o áudio em mp3.</p>
+            </audio>
+        </li>
+    </ol>    <p>Caso seu navegador não consiga reproduzir este áudio. <a href="midia/straight-fuse-french-fuse.mp3" download="straight-fuse-french-fuse.mp3" type="audio/mpeg">Clique aqui</a> para baixar o arquivo em .mp3</p>
+
+</body>
+</html>
